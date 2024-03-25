@@ -1,0 +1,40 @@
+import { StatusBar } from "expo-status-bar";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import TopBarComponent from "./TopBarComponent";
+import Profile from "./ProfileComponent";
+import BalanceComponent from "./BalanceComponent";
+import CategoryComponent from "./CategoryComponent";
+import MenuComponent from "./MenuComponent";
+
+export default function App() {
+  return (
+    <ScrollView >
+      <View style={styles.headerBackgroud}>
+        <View style={styles.content}>
+          <TopBarComponent />
+          <Profile name={"Muhamad Dani Setiawan"} />
+          <BalanceComponent
+            balance={"100.000.000"}
+            accountNo={"1234567890"}
+            poin={"100.000"}
+          />
+          <StatusBar style="auto" />
+        </View>
+       
+      </View>
+      <CategoryComponent/>
+      <MenuComponent/>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  headerBackgroud: {
+    backgroundColor: "#FEE0CD",
+  },
+
+  content: {
+    marginHorizontal: 20,
+    marginTop: 50,
+  },
+});
